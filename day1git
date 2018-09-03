@@ -1,0 +1,69 @@
+1 环境配置
+配置环境
+1.pip 的使用
+	pip install <模块名>
+
+2.git 的使用
+	(1)建立仓库
+		git init # 在此之前需在对应目录下使用此命令
+
+	(2)添加文件（初始版本）
+		git add <file> # 添加文件到仓库
+		git commit -m <message> # 将文件的初次版本添加到masetr
+
+	(3)查看文件状态&修改内容&添加修改的版本
+		git status # 看的是文件是否有被提交
+		git diff # 查看文件具体修改了什么内容
+		git add
+		git commit
+
+	(4)如何查看历史版本&回退到指定的版本
+		git log # 看到的是仓库中存在的版本
+				# commit 5f2c0a5a871f2a940b0a9e8c62ca4bbdd2a1e5f8     # 版本号，取前七位也可以
+				# Author: meipine <405607845@qq.com>				  # 修改者
+				# Date:   Tue Aug 28 22:29:02 2018 +0800			  # 修改时间
+
+    				# I love git									  # 修改的内容概述
+    	git reflog # 历史中所有的版本，用来回复仓库中曾经有但现在不存在的版本
+    	git reset --hard commit_id # 回退到指定版本
+    	git reset --hard HEAD^ # 回退到上一个版本，HEAD^上一个版本，HEAD^^上两个版本，HEAD~100上100个版本
+
+    	到了某个指定版本后，就相当于回到了某个时间点，在改时间之前的版本都存在，后面的都消失了。
+
+    (5)工作区 & stage & master
+    	git add 将文件添加到stage 
+    	git commit 将文件添加到master
+    	git diff 比较的是工作区的文件与尚未提交到stage时的差异
+    	git diff --cached  比较的是工作区的文件与stage中的差异
+    	git diff -- <file>  比较的是工作区的文件与master中的差异
+    	
+    (6)撤销修改 & 删除文件
+    	git checkout -- <file> # 撤销的是编辑了但未提交到stage中
+    	git reset HEAD <file> # 将修改的内容从stage撤销，但是在工作区中还未撤销；HEAD表示最新的版本
+    	git rm/add <file> # 删除库中的文件
+    	git checkout -- <file> # 将仓库中的文件还原到磁盘中（因误删而消失的文件）  原理：磁盘中删除的文件对于git							
+    							 来说是还未提交到stage的编辑，自然可以恢复 ！！！也可以通过git reflog 来还原文件
+
+
+所遇问题
+1.MySQL 安装时缺少"Visual Studio 2013" 
+	安装了"Visual Studio 2013"依然提示错误
+	# 这个适时候想截图，2个问题，一是截图软件没有，一定要写个截图软件，二是sublime不知道支不支持图片，emmmm，学习要紧，先记着。
+	最后通过降低版本解决了问题
+
+2. MySQL 需要专门学习一下 
+
+
+零散知识点
+1.cd.. # 返回上一级目录
+
+
+待办事项
+1.python 截图软件
+2.MySQL 学习
+
+时间：20180830
+
+
+
+
